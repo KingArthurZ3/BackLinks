@@ -95,8 +95,19 @@ body{
     height: 30px;
 }
 
+#main {
+    background-image: url("https://wallpapercave.com/wp/AVfwECt.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.folder {
+    display: inline-block;
+    background-color: red;
+    width: 80px;
+    height: 80px;
+}
 
-
-
-
+#canvas {
+    min-height: 100%;
+}
