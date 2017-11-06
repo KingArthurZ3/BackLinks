@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <title>Backlyncs</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="libs/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="libs/jquery-ui-1.12.1.custom/jquery-ui.min.css" />
-    <script src="libs/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 
-    <script src="js/folder.js"></script>
 </head>
 
 <body>
+    <div id="loginContainer">
+        <ul>
+            <li class="logStyle"><input id="txtEmail" placeholder="Email"></input></li>
+            <li class="logStyle"><input id="txtPassword" placeholder="Password"></input></li>
+            <li class="logStyle"><button id="signInBtn">Log in</button><button id="signUpBtn">Sign up</button></li>
+        </ul>
+    </div>
     <div id="main">
         <div id="topNav">
             <div id="logoImg"></div>
@@ -50,8 +54,25 @@
                 </div>
             </div>
         </div>
-
     </div>
-</body>
 
+    <button id="logoutBtn">Log out</button>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCiSvTnklwEX7cxUoqFGy78kSgiOiwdtsg",
+    authDomain: "backlinksnpo.firebaseapp.com",
+    databaseURL: "https://backlinksnpo.firebaseio.com",
+    projectId: "backlinksnpo",
+    storageBucket: "",
+    messagingSenderId: "321625687517"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="libs/jquery-3.2.1.min.js"></script>
+<script src="libs/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="js/folder.js"></script>
 </html>
