@@ -118,6 +118,38 @@ body{
 .window {
     background-color: blue;
     width: 400px;
-    height: 600px;
-    scroll-behavior: smooth;
+    height: 400px;
+}
+
+.top-bar {
+    height: 40px;
+    background-color: grey;
+}
+
+.top-bar-container {
+    transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    text-align: center;
+    background-color:aliceblue;
+}
+
+.top-bar-button {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    display: inline-block;
+}
+
+
+
+.window-title {
+    background-color: white;
+}
+
+.top-bar-button-containers {
+    float: left;
+    position: absolute;
 }
