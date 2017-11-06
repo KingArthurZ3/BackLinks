@@ -5,6 +5,7 @@ body{
 }
 
 #topNav{
+    z-index: 1;
     width: 100%;
     height: 30px;
     background-color: #E3DDE7;
@@ -54,7 +55,12 @@ body{
 }
 
 #logoImg {
-    
+    width: 100px;
+    height: 100px;
+    border-radius: 200px;
+    margin-left: 50%;
+    margin-bottom: 15px;
+    transform: translate(-50%, 0);
 }
 
 .helper {
@@ -97,6 +103,7 @@ body{
 }
 
 #main {
+    z-index: 1;
     height: 100vh;
     width: 100vw;
     background-image: url("https://wallpapercave.com/wp/AVfwECt.jpg");
@@ -155,16 +162,68 @@ body{
 }
 
 #loginContainer {
+    z-index: 3;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 300px;
-    background-color: white;
-
+    width: 100vw;
+    height: 100vh;
 }
 
 .logStyle {
     list-style: none;
+    
+}
+
+.blur {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+#loginList {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inputInfo {
+    border-radius: 6px;
+    border: none;
+    width: 250px;
+    height: 30px;
+    margin: 10px;
+    outline: none;
+}
+
+
+
+.logBtn {
+    display: inline-block;
+    width: 80px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: 
+    font-family: Avenir;
+    font-size: 13px;
+    color: 
+}
+
+.listBtn {
+    width: 200px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#logoutBtn {
+    display: inline-block;
+    width: 70px;
+    height: 22px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: 
+    font-family: Avenir;
+    font-size: 14px;
+    color: 
 }

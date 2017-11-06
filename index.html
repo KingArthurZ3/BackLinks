@@ -11,20 +11,21 @@
 
 <body>
     <div id="loginContainer">
-        <ul>
-            <li class="logStyle"><input id="txtEmail" placeholder="Email"></input></li>
-            <li class="logStyle"><input id="txtPassword" placeholder="Password"></input></li>
-            <li class="logStyle"><button id="signInBtn">Log in</button><button id="signUpBtn">Sign up</button></li>
+        <ul id="loginList">
+            <img src="resources/placeholderLogo.png" id="logoImg">
+            <li class="logStyle"><input class="inputInfo" id="txtEmail" placeholder="  Email"></input></li>
+            <li class="logStyle"><input class="inputInfo" type="password" id="txtPassword" placeholder="  Password"></input></li>
+            <li class="logStyle"><div class="listBtn"><button id="signInBtn" class="logBtn">Log in</button><button id="signUpBtn" class="logBtn">Sign up</button></div></li>
         </ul>
     </div>
-    <div id="main">
+    <div id="main" class="blur">
         <div id="topNav">
-            <div id="logoImg"></div>
             <div id="logo">
                 <b>Backlyncs.</b>
             </div>
             <div id="iconContainer">
                 <ul id="iconList">
+                    <li><button id="logoutBtn">Log out</button></li>
                     <li class="listIcon"><img class="icon" src="resources/wifiIcon.png" id="wifiIcon" height="20px" width="27px"></li>
                     <li class="listIcon"><img class="icon" src="resources/batteryFakeIcon.png" height="30px" width="35px"></li>
                     <li class="listIcon">
@@ -55,9 +56,6 @@
             </div>
         </div>
     </div>
-
-    <button id="logoutBtn">Log out</button>
-
 </body>
 <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
 <script>

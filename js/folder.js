@@ -7,6 +7,7 @@ $(document).ready(function(){
     const btnLogin = $('#signInBtn');
     const btnSignUp = $('#signUpBtn');
     const btnLogout = $('#logoutBtn');
+    const mainContent = $('#main');
     var userObj = "";
     
     $(".folder").draggable({ containment: "parent" });
@@ -54,9 +55,11 @@ $(document).ready(function(){
         if(firebaseUser) {
            console.log(firebaseUser);
            logContainer.hide();
+           mainContent.removeClass('blur');          
         } else {
             console.log('not logged in');
             logContainer.show();
+            mainContent.addClass('blur');
         }
         
     });
