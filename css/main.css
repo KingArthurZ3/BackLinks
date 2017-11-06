@@ -203,14 +203,14 @@ body{
     border: none;
     border-radius: 5px;
     margin: 10px;
-    background-color: 
+    background-color: darkgray;
     font-family: Avenir;
     font-size: 13px;
-    color: 
+    outline: none;
 }
 
 .listBtn {
-    width: 200px;
+    width: 205px;
     margin-left: 50%;
     transform: translate(-50%, 0);
 }
@@ -225,5 +225,13 @@ body{
     background-color: 
     font-family: Avenir;
     font-size: 14px;
-    color: 
+    outline: none;
 }
+
+#signUpForm {
+    z-index: 4;
+    width: auto;
+    
+}
+
+

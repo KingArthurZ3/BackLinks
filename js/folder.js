@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //Firebase User Data
     var db = firebase.database();
     const auth = firebase.auth();
     const logContainer = $('#loginContainer');
@@ -9,6 +10,9 @@ $(document).ready(function(){
     const btnLogout = $('#logoutBtn');
     const mainContent = $('#main');
     var userObj = "";
+    
+    //TypeForm Data
+    const formURL = "https://api.typeform.com/v1/form/r2SNKs?key=de1432909a011d2052a4551694cbe9e98bef6ff3"
     
     $(".folder").draggable({ containment: "parent" });
     
@@ -38,16 +42,20 @@ $(document).ready(function(){
     
     // Add signup event
     btnSignUp.click( e => {
-        //Get email and pass
-        //TODO: CHECK FOR REAL EMAIL
-        const email = txtEmail.val();
-        const pass = txtPassword.val();
-        const auth = firebase.auth();
         
-        //Sign in
-        const promise = auth.createUserWithEmailAndPassword(email, pass);
+        var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q)}
+//        //Get email and pass
+//        //TODO: CHECK FOR REAL EMAIL
+//        const email = txtEmail.val();
+//        const pass = txtPassword.val();
+//        const auth = firebase.auth();
+//        
+//        //Sign in
+//        const promise = auth.createUserWithEmailAndPassword(email, pass);
+//        
+//        promise.catch(e => console.log(e.message));
         
-        promise.catch(e => console.log(e.message));
+        
     });
     
     // Add a realtime listener
@@ -66,6 +74,7 @@ $(document).ready(function(){
     
     //log out  function
     btnLogout.click( e=> {
+        
         firebase.auth().signOut();
     });
     
