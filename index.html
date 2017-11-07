@@ -14,15 +14,16 @@
     <div id="loginContainer">
         <ul id="loginList">
             <img src="resources/placeholderLogo.png" id="logoImg">
-            <li class="logStyle"><input class="inputInfo" id="txtEmail" placeholder="  Email"></input></li>
-            <li class="logStyle"><input class="inputInfo" type="password" id="txtPassword" placeholder="  Password"></input></li>
-            <li class="logStyle"><div class="listBtn"><button id="signInBtn" class="logBtn">Log in</button>
-                <button class="typeform-share button, logBtn"id="signUpBtn" href="https://bill2000.typeform.com/to/r2SNKs" data-mode="popup"  target="_blank">Register</button>
+            <li class="logStyle"><input class="inputInfo" id="txtEmail" placeholder="  Email">
+            <li class="logStyle"><input class="inputInfo" type="password" id="txtPassword" placeholder="  Password">
+            <li class="logStyle">
+                <div class="listBtn"><button id="signInBtn" class="logBtn">Log in</button>
+                    <button class="typeform-share button, logBtn" id="signUpBtn" href="https://bill2000.typeform.com/to/r2SNKs" data-mode="popup" target="_blank">Register</button>
                 </div>
             </li>
         </ul>
     </div>
-<!--<button id="signUpBtn" class="logBtn">Sign up</button>-->
+    <!--<button id="signUpBtn" class="logBtn">Sign up</button>-->
     <div id="main" class="blur">
         <div id="topNav">
             <div id="logo">
@@ -42,15 +43,18 @@
         </div>
 
         <div id="canvas">
+            <div class="folder" type="button">
+                <img class="folder-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png">
+                <p class = "folder-name">Sample Text</p>
+            </div>
             <div class="folder" type="button"></div>
             <div class="folder" type="button"></div>
             <div class="folder" type="button"></div>
-            <div class="folder" type="button"></div>
-            
+
             <div class="window">
                 <div class="top-bar">
                     <div class="top-bar-container">
-                        <div class ="top-bar-button-containers">
+                        <div class="top-bar-button-containers">
                             <div class="top-bar-button" type="button"></div>
                             <div class="top-bar-button" type="button"></div>
                             <div class="top-bar-button" type="button"></div>
@@ -62,20 +66,24 @@
         </div>
     </div>
 </body>
+
 <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCiSvTnklwEX7cxUoqFGy78kSgiOiwdtsg",
-    authDomain: "backlinksnpo.firebaseapp.com",
-    databaseURL: "https://backlinksnpo.firebaseio.com",
-    projectId: "backlinksnpo",
-    storageBucket: "",
-    messagingSenderId: "321625687517"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCiSvTnklwEX7cxUoqFGy78kSgiOiwdtsg",
+        authDomain: "backlinksnpo.firebaseapp.com",
+        databaseURL: "https://backlinksnpo.firebaseio.com",
+        projectId: "backlinksnpo",
+        storageBucket: "",
+        messagingSenderId: "321625687517"
+    };
+    firebase.initializeApp(config);
+
 </script>
 <script src="libs/jquery-3.2.1.min.js"></script>
 <script src="libs/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="js/folder.js"></script>
+<script src="js/login.js"></script>
+
 </html>
