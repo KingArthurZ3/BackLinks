@@ -30,7 +30,20 @@ $(document).ready(function(){
         promise.catch(e => console.log(e.message));
     });
     
-    // Add signup event
+    // Listens for userinfo added
+    var commentsRef = firebase.database().ref('backlinksnpo/UserInfo/');
+    // Reaction to change in user data
+    commentsRef.on('child_added', function(data) {
+          alert("changed");
+          const email = data.Email;
+          const pass = data.Pass;
+        
+          //creates User
+          const promise = auth.createUserWithEmailAndPassword(email, pass);
+        
+          promise.catch(e => console.log(e.message));
+    });
+    
 
 //        //Get email and pass
 //        //TODO: CHECK FOR REAL EMAIL
