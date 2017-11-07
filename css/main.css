@@ -112,10 +112,11 @@ body{
 }
 
 .folder {
-    background-color: red;
-    text-align: justify;
     width: 80px;
     height: 80px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 3px;
 }
 
 #canvas {
@@ -240,11 +241,15 @@ body{
 .folder-icon {
     display: block;
     max-width:100%;
-    max-height: 100%;
+    max-height:100%;
 }
 
 .folder-name {
     width: 100%;
+    display: inline-block;
     text-align: center;
     font-size: 12px;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 3px;
 }
