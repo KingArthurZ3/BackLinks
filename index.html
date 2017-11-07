@@ -10,20 +10,13 @@
 </head>
 
 <body>
-
     <div id="loginContainer">
+        <iframe id="typeform-full" width="100%" height="100%" frameborder="0" src="https://bill2000.typeform.com/to/r2SNKs"></iframe>
         <ul id="loginList">
             <img src="resources/placeholderLogo.png" id="logoImg">
             <li class="logStyle"><input class="inputInfo" id="txtEmail" placeholder="  Email">
             <li class="logStyle"><input class="inputInfo" type="password" id="txtPassword" placeholder="  Password">
-            <li class="logStyle"><div class="listBtn"><button id="signInBtn" class="logBtn">Log in</button></div>
-                <button class="typeform-share button, logBtn"id="signUpBtn" href="https://bill2000.typeform.com/to/r2SNKs" data-mode="popup"  target="_blank">Register</button>
-            <li class="logStyle"><input class="inputInfo" id="txtEmail" placeholder="  Email">
-            <li class="logStyle"><input class="inputInfo" type="password" id="txtPassword" placeholder="  Password">
-            <li class="logStyle">
-                <div class="listBtn"><button id="signInBtn" class="logBtn">Log in</button>
-                    <button class="typeform-share button, logBtn" id="signUpBtn" href="https://bill2000.typeform.com/to/r2SNKs" data-mode="popup" target="_blank">Register</button>
-                </div>
+            <li class="logStyle"><div class="listBtn"><button id="signInBtn" class="logBtn">Log in</button><button id="signUpBtn" class="logBtn">Register</button></div>
         </ul>
     </div>
     <div id="main" class="blur">
@@ -83,9 +76,11 @@
     firebase.initializeApp(config);
 
 </script>
+<script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
 <script src="libs/jquery-3.2.1.min.js"></script>
 <script src="libs/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="js/folder.js"></script>
 <script src="js/login.js"></script>
+<script src="js/form.js"></script>
 
 </html>
