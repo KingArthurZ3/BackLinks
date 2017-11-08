@@ -1,62 +1,63 @@
 $(document).ready(function () {
-    resetFolders();
+    resetIcons();
     
     $(".folder").draggable({
         containment: "parent"
     });
 
     $(".window").draggable({
-        containment: "parent"
+        containment: "parent",
+        handle: ".top-bar",
     });
     $(".window").resizable({
         maxHeight: 600,
-        maxWidth: 600,
-        minHeight: 200,
+        maxWidth: 800,
+        minHeight: 300,
         minWidth: 200
     });
 
-    $(".folder").on("click", function () {
-        resetFolders(easing=0);
-        highlightFolder(this);
+    $(".icon-container").on("click", function () {
+        resetIcons(easing=0);
+        highlightIcon(this);
     });
 
     //If click outside of folders, hide folder border and background
     $(document).on("click", function (e) {
         let target = $(e.target);
 
-        if (!(target.hasClass("folder-icon") || target.hasClass("folder-name"))) {
-            resetFolders(e);
+        if (!(target.hasClass("icon-image") || target.hasClass("icon-name"))) {
+            resetIcons(e);
         }
     });
 });
 
-function highlightFolder(folder, easing=350) {
-    $(folder).animate({
+function highlightIcon(icon, easing=350) {
+    $(icon).animate({
         borderColor: "rgb(0, 0, 0, 0.5)"
     }, easing);
-    $(folder).find("p").animate({
+    $(icon).find("p").animate({
         borderColor: "rgb(0, 0, 0, 0.5)"
     }, easing);
-    $(folder).animate({
+    $(icon).animate({
         backgroundColor: "rgb(0, 0, 0, 0.1)"
     }, easing);
-    $(folder).find("p").animate({
+    $(icon).find("p").animate({
         backgroundColor: "rgb(0, 0, 0, 0.1)"
     }, easing);
 
 }
 
-function resetFolders(easing= 350) {    
-    $(".folder").animate({
+function resetIcons(easing= 350) {    
+    $(".icon-container").animate({
         backgroundColor: "rgb(0, 0, 0, 0)"
     }, easing);
-    $(".folder").find("p").animate({
+    $(".icon-container").find("p").animate({
         backgroundColor: "rgb(0, 0, 0, 0)"
     }, easing);
-    $(".folder").animate({
+    $(".icon-container").animate({
         borderColor: "rgb(0, 0, 0, 0)"
     }, easing);
-    $(".folder").find("p").animate({
+    $(".icon-container").find("p").animate({
         borderColor: "rgb(0, 0, 0, 0)"
     }, easing);
 }
