@@ -2,21 +2,23 @@ $(document).ready(function () {
     let ogHeight = $(".window").css("height");
 
     $(".window-minimize").on("click", function () {
-        ogHeight = $(".window").css("height");
+        if ($(".window").css("height") != "25px"){
+            $(".window").animate({
+                height: "25"
+            }, 500);
 
-        $(".window").animate({
-            height: "40"
-        }, 500);
-        
-         $(".window").resizable( 'disable' );
+             $(".window").resizable( 'disable' );
+        }
     });
 
     $(".window-maximize").on("click", function () {
-        $(".window").animate({
-            height: ogHeight
-        }, 500);
-        
-        $(".window").resizable( 'enable' );
+        if ($(".window").css("height") == "25px"){
+            $(".window").animate({
+                height: ogHeight
+            }, 500);
+
+            $(".window").resizable( 'enable' );
+        }
     });
 
     $(".window-close").on("click", function () {
