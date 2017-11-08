@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
 });
 
-function highlightIcon(icon, easing=350) {
+function highlightIcon(icon, easing=200) {
     $(icon).animate({
         borderColor: "rgb(0, 0, 0, 0.5)"
     }, easing);
@@ -47,7 +47,7 @@ function highlightIcon(icon, easing=350) {
 
 }
 
-function resetIcons(easing= 350) {    
+function resetIcons(easing= 200) {    
     $(".icon-container").animate({
         backgroundColor: "rgb(0, 0, 0, 0)"
     }, easing);
