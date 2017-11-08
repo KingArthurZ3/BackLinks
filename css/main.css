@@ -1,10 +1,14 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: Avenir;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-#topNav{
+#topNav {
     z-index: 1;
     width: 100%;
     height: 30px;
@@ -12,6 +16,7 @@ body{
     overflow-x: auto;
     overflow-y: hidden;
 }
+
 #logo {
     width: 100px;
     height: auto;
@@ -50,7 +55,7 @@ body{
     float: right;
     background-color: #E3DDE7;
     display: flex;
-    align-items: center; 
+    align-items: center;
     height: 30px;
 }
 
@@ -82,7 +87,6 @@ body{
 }
 
 #iconList {
-
     list-style: none;
     height: 30px;
     display: flex;
@@ -111,12 +115,12 @@ body{
     background-repeat: no-repeat;
 }
 
-.folder {
-    width: 80px;
-    height: 80px;
+.icon-container {
     border-style: solid;
     border-width: 1.5px;
     border-radius: 3px;
+    padding: 3px auto;
+    cursor: pointer;
 }
 
 #canvas {
@@ -125,42 +129,42 @@ body{
 }
 
 .window {
-    background-color: blue;
     width: 400px;
     height: 400px;
 }
 
 .top-bar {
-    height: 40px;
+    height: 25px;
     background-color: grey;
+    cursor: move;
+    
+    text-align: center;
+    
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
 }
 
 .top-bar-container {
-    transform: translateY(50%);
-    -ms-transform: translateY(50%);
-    -moz-transform: translateY(50%);
-    -webkit-transform: translateY(50%);
-    -o-transform: translateY(50%);
-    text-align: center;
-    background-color:aliceblue;
+    margin-top: 50px;
 }
 
 .top-bar-button {
-    height: 20px;
-    width: 20px;
-    background-color: green;
+    height: 10px;
+    width: 10px;
+    background-color: red;
     display: inline-block;
+    cursor: pointer;
 }
 
-
-
 .window-title {
-    background-color: white;
+    font-weight: 700;
 }
 
 .top-bar-button-containers {
+    height: 25px;
     float: left;
     position: absolute;
+    margin-left: 7px;
 }
 
 #loginContainer {
@@ -172,7 +176,6 @@ body{
 
 .logStyle {
     list-style: none;
-    
 }
 
 .blur {
@@ -195,8 +198,6 @@ body{
     margin: 10px;
     outline: none;
 }
-
-
 
 .logBtn {
     display: inline-block;
@@ -224,8 +225,7 @@ body{
     border: none;
     border-radius: 5px;
     margin: 10px;
-    background-color: 
-    font-family: Avenir;
+    background-color: font-family: Avenir;
     font-size: 14px;
     outline: none;
 }
@@ -233,34 +233,31 @@ body{
 #signUpForm {
     z-index: 4;
     width: auto;
-    
 }
 
-
-
-.folder-icon {
+.icon-image {
     display: block;
-    max-width:100%;
-    max-height:100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.folder-name {
+.icon-name {
     width: 100%;
     display: inline-block;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
     border-style: solid;
     border-width: 0px;
     border-radius: 3px;
 }
 
 iframe {
-    position: absolute; 
-    left:0; 
-    right:0;
-    bottom:0;
-    top:0; 
-    border:0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border: 0;
 }
 
 html {
@@ -269,7 +266,33 @@ html {
     height: 100%;
 }
 
-
 .form {
     z-index: 4;
 }
+
+.window-flex-grid {
+    background-color: green;
+}
+.window-icon {
+    display: inline-block;
+    margin: 10px;
+    width: 100px;
+}
+
+.window-content {
+    background-color: yellow;
+    height: calc(100% - 25px);
+    width: 100%;
+    overflow: scroll;
+}
+
+.folder-name {
+    font-weight: 700;
+}
+
+.folder {
+    width: 80px;
+    height: 80px;
+}
+
+
