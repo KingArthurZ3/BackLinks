@@ -357,3 +357,20 @@ html {
 .window-maximize:hover {
     background-color: #00b918;
 }
+
+#errorMessage {
+    z-index: 3;
+    display: block;
+    width: auto;
+    height: auto;
+    
+}
+
+#errorPopup {
+    display: inline-block;
+    width: 100%;
+    height: auto
+    text-align: center;
+    color:beige;
+    font-size: 15px;
+}

@@ -18,7 +18,9 @@
                 <li class="logStyle"><input class="inputInfo" type="password" id="txtPassword" placeholder="  Password">
                     <li class="logStyle">
                         <div class="listBtn"><button id="signInBtn" class="logBtn">Log in</button><button id="signUpBtn" class="logBtn">Register</button></div>
+            <li class="logStyle" id="errorPopup"><div id="errorMessage"></div></li>
         </ul>
+        
     </div>
     <div id="main" class="blur">
         <div id="topNav">
@@ -90,7 +92,6 @@
 
 <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
 <script>
-    // Initialize Firebase
     var config = {
         apiKey: "AIzaSyCiSvTnklwEX7cxUoqFGy78kSgiOiwdtsg",
         authDomain: "backlinksnpo.firebaseapp.com",
@@ -100,7 +101,6 @@
         messagingSenderId: "321625687517"
     };
     firebase.initializeApp(config);
-
 </script>
 <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
 <script src="libs/jquery-3.2.1.min.js"></script>
