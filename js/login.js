@@ -30,7 +30,7 @@ $(document).ready(function(){
         promise.catch(e => console.log(e.message));
     });
     
-    // Listens for userinfo added
+    // Listens for userinfo added with filepath for firebase
     var commentsRef = firebase.database().ref('backlinksnpo/UserInfo/');
     // Reaction to change in user data
     commentsRef.on('child_added', function(data) {
