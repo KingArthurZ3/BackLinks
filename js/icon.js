@@ -5,17 +5,6 @@ $(document).ready(function () {
         containment: "parent"
     });
 
-    $(".window").draggable({
-        containment: "parent",
-        handle: ".top-bar",
-    });
-    $(".window").resizable({
-        maxHeight: 600,
-        maxWidth: 800,
-        minHeight: 300,
-        minWidth: 200
-    });
-
     $(".icon-container").on("click", function () {
         resetIcons(easing=0);
         highlightIcon(this);
@@ -33,16 +22,16 @@ $(document).ready(function () {
 
 function highlightIcon(icon, easing=200) {
     $(icon).animate({
-        borderColor: "rgb(0, 0, 0, 0.5)"
+        borderColor: "rgb(255, 255, 255, 0.5)"
     }, easing);
     $(icon).find("p").animate({
-        borderColor: "rgb(0, 0, 0, 0.5)"
+        borderColor: "rgb(255, 255, 255, 0.5)"
     }, easing);
     $(icon).animate({
-        backgroundColor: "rgb(0, 0, 0, 0.1)"
+        backgroundColor: "rgba(0, 0, 0, 0.53)"
     }, easing);
     $(icon).find("p").animate({
-        backgroundColor: "rgb(0, 0, 0, 0.1)"
+        backgroundColor: "rgb(255, 255, 255, 0.5)"
     }, easing);
 
 }
