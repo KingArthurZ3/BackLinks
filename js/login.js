@@ -11,7 +11,7 @@ $(document).ready(function(){
     const mainContent = $('#main');
     const errorDisplay = $('#errorMessage');
     var userObj = "";
-    
+
 
     //TypeForm Data
     const formURL = "https://api.typeform.com/v1/form/r2SNKs?key=de1432909a011d2052a4551694cbe9e98bef6ff3"
@@ -60,9 +60,11 @@ $(document).ready(function(){
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser) {
-            console.log(firebaseUser);
-            logContainer.hide();
-            mainContent.removeClass('blur');          
+            setTimeout(function(){
+                console.log(firebaseUser);
+                logContainer.hide();
+                mainContent.removeClass('blur');   
+            }, 1000);       
         } else {
             console.log('not logged in');
             logContainer.show();
