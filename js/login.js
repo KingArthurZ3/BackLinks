@@ -43,20 +43,6 @@ $(document).ready(function(){
         promise.catch(e => console.log(e.message));
     });
 
-    // Listens for userinfo added with filepath for firebase
-    var commentsRef = firebase.database().ref('backlinksnpo/UserInfo/');
-    // Reaction to change in user data
-    commentsRef.on('child_added', function(data) {
-        alert("changed");
-        const email = data.Email;
-        const pass = data.Pass;
-
-        //creates User
-        const promise = auth.createUserWithEmailAndPassword(email, pass);
-
-        promise.catch(e => console.log(e.message));
-    });
-
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser) {
