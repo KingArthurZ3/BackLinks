@@ -18,7 +18,7 @@ $(document).ready(function () {
         if ($(".window").css("height") != "25px") {
             ogHeight = $(".window").css("height");
             ogWidth = $(".window").css("width");
-            
+
             $(".window").animate({
                 height: "25"
             }, {
@@ -28,7 +28,7 @@ $(document).ready(function () {
                     height: "easeInSine"
                 }
             });
-            
+
             $(".window").animate({
                 width: "200"
             }, {
@@ -38,7 +38,7 @@ $(document).ready(function () {
                     height: "easeInSine"
                 }
             });
-            
+
             setTimeout(function(){
                 $(".top-bar").css("border-radius", "6px 6px 6px 6px");
             }, 500);
@@ -50,7 +50,7 @@ $(document).ready(function () {
     $(".window-maximize").on("click", function () {
         if ($(".window").css("height") == "25px") {
             $(".top-bar").css("border-radius", "6px 6px 0px 0px");
-            
+
             $(".window").animate({
                 width: ogWidth
             }, {
@@ -60,7 +60,7 @@ $(document).ready(function () {
                     height: "easeInSine"
                 }
             });
-            
+
             $(".window").animate({
                 height: ogHeight
             }, {
