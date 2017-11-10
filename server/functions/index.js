@@ -36,9 +36,3 @@ exports.createUserFromDatabase = functions.database.ref('/UserInfo/{pushId}').on
     return event.data.ref.set(post)
 })
 
-//function sanitize(s){
-//    var sanitizedText = s
-//    sanitizedText = sanitizedText.replace(/\bstupid\b/ig, "wonderful")
-//    return sanitizedText
-//}
-

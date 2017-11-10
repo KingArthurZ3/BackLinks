@@ -34,7 +34,7 @@ $(document).ready(function(){
             if (errorCode === 'auth/wrong-password') {
                 $('#errorMessage').text('Aww shucks, wrong password');
             } else {
-                $('#errorMessage').text('Yikes, try another email or register');
+                $('#errorMessage').text('Yikes, try another email or register with us!');
             }
 
             // ...
@@ -56,19 +56,6 @@ $(document).ready(function(){
 
         promise.catch(e => console.log(e.message));
     });
-
-
-    //        //Get email and pass
-    //        //TODO: CHECK FOR REAL EMAIL
-    //        const email = txtEmail.val();
-    //        const pass = txtPassword.val();
-    //        const auth = firebase.auth();
-    //        
-    //        //Sign in
-    //        const promise = auth.createUserWithEmailAndPassword(email, pass);
-    //        
-    //        promise.catch(e => console.log(e.message));
-
 
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
