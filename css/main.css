@@ -366,6 +366,8 @@ html {
 #topNav-left .topNav-text {
     padding-left: 7px;
     padding-right: 7px;
+    margin-left: -2px;
+    margin-right: -2px;
     -webkit-transition: 0.15s;
     -moz-transition: 0.15s;
     -ms-transition: 0.15s;
