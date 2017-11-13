@@ -60,11 +60,9 @@ $(document).ready(function(){
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser) {
-            console.log(firebaseUser);
             logContainer.hide();
             mainContent.removeClass('blur');          
         } else {
-            console.log('not logged in');
             logContainer.show();
             mainContent.addClass('blur');
         }

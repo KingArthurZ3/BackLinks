@@ -91,3 +91,9 @@ function putFile(img, name, targetDiv=".window-content"){
     $(targetDiv).append(html);
 }
 
+function putAnnouncements(){
+    
+    
+    
+    
+}
