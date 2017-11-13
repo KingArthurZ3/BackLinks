@@ -23,6 +23,19 @@ body {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
+input[type=text] {
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 3px;
+    width: 90%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus {
+    border: 3px solid rgb(85, 85, 85);
+}
+
 #topNav {
     width: 100%;
     height: 22px;
@@ -405,5 +418,86 @@ html {
     height: auto;
     text-align: center;
     color:beige;
+    font-size: 15px;
+}
+
+.side-scroll-pane {
+    height: 100%;
+    width: 150px;
+    float: left;
+}
+
+.side-content-pane {
+    height: 100%;
+    width: calc(100% - 202px);
+    float: left;
+    padding-left: 25px;
+    padding-right: 25px;
+    overflow: scroll;
+    background-color: rgba(237, 237, 237, 0.85);
+    border-left: 2px solid #afaeaf;
+}
+
+.pane-container {
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 900;
+}
+
+.entry-date {
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 15px;
+    
+}
+
+.entry-content {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.entry-author {
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.side-row {
+    padding: 5px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.side-row-search {
+    height: 30px;
+    margin-top: 10px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.side-scroll-pane-rows {
+    margin-top: 20px;
+    height: calc(100% - 50px);
+    overflow: auto;
+}
+
+.side-row-details {
+    font-size: 12px;
+}
+
+.side-row-title {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.entry-tags {
+    margin-left: 20px;
+    margin-top: 20px;
     font-size: 15px;
 }

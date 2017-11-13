@@ -1,0 +1,23 @@
+{
+  "1": {
+    "title": "test 1",
+    "author": "a1",
+    "date": "1/1/1111",
+    "body": "this is test 1 for all intended purposes",
+    "tags": "announcements, 1, specifical"
+  },
+  "2": {
+    "title": "test 2",
+    "author": "a2",
+    "date": "2/2/2222",
+    "body": "this is test 2 essentially",
+    "tags": "announcements, 2, technical"
+  },
+  "3": {
+    "title": "test 3",
+    "author": "a3",
+    "date": "3/3/3333",
+    "body": "this is test 3 basically",
+    "tags": "announcements, 3, general"
+  }
+}
