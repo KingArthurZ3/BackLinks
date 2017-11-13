@@ -79,3 +79,15 @@ $(document).ready(function () {
         $(".window").fadeToggle(500);
     });
 });
+
+function putFile(img, name, targetDiv=".window-content"){
+    let html = '<div class="icon-container window-icon">';
+    html += '<img class="icon-image" src="';
+    html += img;
+    html += '"><p1 class="icon-name">';
+    html += name;
+    html +='</p1></div>';
+    
+    $(targetDiv).append(html);
+}
+
