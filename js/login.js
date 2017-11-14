@@ -46,16 +46,12 @@ $(document).ready(function(){
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser) {
-<<<<<<< HEAD
+
             setTimeout(function(){
                 console.log(firebaseUser);
                 logContainer.hide();
                 mainContent.removeClass('blur');   
             }, 1000);       
-=======
-            logContainer.hide();
-            mainContent.removeClass('blur');          
->>>>>>> 861bc8cf7e75f29a48afae3e44b64879c72b54c2
         } else {
             logContainer.show();
             mainContent.addClass('blur');
