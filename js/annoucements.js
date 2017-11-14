@@ -1,11 +1,9 @@
-let announcements = JSON.parse('[{ "title": "test 1", "author": "a1", "date": "1/1/1111", "body": "this is test 1 for all intended purposes", "tags": "announcements, 1, specifical" }, { "title": "test 2", "author": "a2", "date": "2/2/2222", "body": "this is test 2 essentially", "tags": "announcements, 2, technical" }, { "title": "test 3", "author": "a3", "date": "3/3/3333", "body": "this is test 3 basically", "tags": "announcements, 3, general" }]');
-let currentlySelectedRowID = "#row-1";
+let announcements = JSON.parse('[{ "title": "test 1", "author": "a1", "date": "1.1.1111", "body": "this is test 1 for all intended purposes", "tags": "announcements, 1, specifical" }, { "title": "test 2", "author": "a2", "date": "2.2.2222", "body": "this is test 2 essentially", "tags": "announcements, 2, technical" }, { "title": "test 3", "author": "a3", "date": "3.3.3333", "body": "this is test 3 basically", "tags": "announcements, 3, general" }]');
+let currentlyDisplayedRowID;
 
 
 $(document).ready(function () {
     displayRows(announcements);
-    highlightRow();
-    displayEntry(announcements[0]);
 
     var options = {
         shouldSort: true,
@@ -33,45 +31,33 @@ $(document).ready(function () {
     });
 
     $(".side-scroll-pane-rows").on('click', '.side-row', function () {
-        let rowID = $(this).attr('id');
-        rowID = "#" + rowID;
+        highlight("#" + $(this).attr("id"));
 
-        highlightRow(rowID);
-
-        let title = $(rowID).find(".side-row-title");
-        let author = $(rowID).find(".side-row-author");
-        let date = $(rowID).find(".side-row-date");
+        let title = $(this).find(".side-row-title");
+        let author = $(this).find(".side-row-author");
+        let date = $(this).find(".side-row-date");
 
         let entry = findEntryByRow(title.text(), author.text(), date.text(), announcements);
 
         if (entry) {
             displayEntry(entry);
-            currentlySelectedRowID = rowID;
+            currentlyDisplayedRowID = "#" + $(this).attr("id");
         }
     });
-    
+
     $(".side-scroll-pane-rows").on("mouseenter", '.side-row', function () {
-        let rowID = $(this).attr('id');
-        rowID = "#" + rowID;
-        
-        $(rowID).css("background-color", "rgba(237, 237, 237, 0.2)");
-        $(rowID).css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0.5)");
+        highlight("#" + $(this).attr("id"), false);
     });
-    
+
     $(".side-scroll-pane-rows").on("mouseleave", '.side-row', function () {
-        let rowID = $(this).attr('id');
-        rowID = "#" + rowID;
-                
-        if (rowID != currentlySelectedRowID){
-            $(rowID).css("background-color", "rgba(237, 237, 237, 0)");
-            $(rowID).css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0)");
+        if ("#" + $(this).attr("id") != currentlyDisplayedRowID) {
+            clearHighlight("#" + $(this).attr("id"));
         }
     });
-    
+
     $(".side-row-input").focusout(function () {
-        if ($(".side-row-input").val() == ""){
+        if ($(".side-row-input").val() == "") {
             displayRows(announcements);
-            highlightRow(currentlySelectedRowID);
         }
     });
 });
@@ -111,12 +97,12 @@ function displayRows(jsonArr, parentDiv = '.side-scroll-pane-rows') {
 
     for (let i = 0; i < jsonArr.length; i++) {
         let entry = jsonArr[i];
-        jsonTitle = entry["title"].replace(/\s/g, '');
-        jsonAuthor = entry["author"].replace(/\s/g, '');
-        jsonDate = entry["date"].replace(/\s/g, '');
+        jsonTitle = entry["title"].replace(/\W/g, '');
+        jsonAuthor = entry["author"].replace(/\W/g, '');
+        jsonDate = entry["date"].replace(/\W/g, '');
 
-        html += '<div class="side-row" id="row-';
-        html += i + 1;
+        html += '<div class="side-row" id="';
+        html += jsonTitle + jsonAuthor + jsonDate;
         html += '"><div class="side-row-title">';
         html += entry["title"];
         html += '</div><div class="side-row-details side-row-author">';
@@ -127,12 +113,23 @@ function displayRows(jsonArr, parentDiv = '.side-scroll-pane-rows') {
     }
 
     $(parentDiv).append(html);
+    
+    if (currentlyDisplayedRowID){
+        highlight(currentlyDisplayedRowID);
+    }
 }
 
-function highlightRow(rowDiv = "#row-1") {
-    $(".side-row").css("background-color", "rgba(237, 237, 237, 0)");
-    $(".side-row").css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0)");
+function highlight(rowID, clearHighlightFirst=true) {
+    if (clearHighlightFirst){
+        $(".side-row").css("background-color", "rgba(237, 237, 237, 0)");
+        $(".side-row").css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0)");
+    }
 
-    $(rowDiv).css("background-color", "rgba(237, 237, 237, 0.2)");
-    $(rowDiv).css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0.5)");
+    $(rowID).css("background-color", "rgba(237, 237, 237, 0.2)");
+    $(rowID).css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0.5)");
+}
+
+function clearHighlight(rowID) {
+    $(rowID).css("background-color", "rgba(237, 237, 237, 0)");
+    $(rowID).css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0)");
 }

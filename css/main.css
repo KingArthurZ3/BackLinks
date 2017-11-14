@@ -476,21 +476,21 @@ html {
 }
 
 .entry-date {
-    margin-top: 5px;
+    margin-top: 20px;
     margin-left: 20px;
-    font-size: 15px;
+    font-size: 14px;
     
 }
 
 .entry-content {
     margin-left: 20px;
     margin-top: 20px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .entry-author {
     margin-left: 20px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .side-row {
