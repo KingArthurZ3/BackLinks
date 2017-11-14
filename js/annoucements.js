@@ -3,29 +3,18 @@ var storage = firebase.storage();
 var gsReference = storage.ref('announcements/real.json');
 var text;
 var jsonResponse;
+var jsonObject;
 
-gsReference.getDownloadURL().then(function(url) {
-  // This can be downloaded directly:
-  var xhr = new XMLHttpRequest();
-  xhr.responseType = 'text';
-  xhr.onload = function(event) {
-      text = xhr.responseText;
-      jsonResponse = JSON.parse(text);
-      // all code that uses the json responses should go here!
-      
-  };
-  xhr.open('GET', url);
-  xhr.send();
-    
-});
 //'[{ "title": "test 1", "author": "a1", "date": "1.1.1111", "body": "this is test 1 for all intended purposes", "tags": "announcements, 1, specifical" }, { "title": "test 2", "author": "a2", "date": "2.2.2222", "body": "this is test 2 essentially", "tags": "announcements, 2, technical" }, { "title": "test 3", "author": "a3", "date": "3.3.3333", "body": "this is test 3 basically", "tags": "announcements, 3, general" }]'
 // announcements is saved to a json file ex: alert(jsonResponse[0].title) should return test 1y
 let announcements = [];
 let currentlyDisplayedRowID;
 
-
 $(document).ready(function () {
+
+    //Matt's stuff
     displayRows(announcements);
+
 
     var options = {
         shouldSort: true,
@@ -35,12 +24,12 @@ $(document).ready(function () {
         maxPatternLength: 32,
         minMatchCharLength: 1,
         keys: [
-                "title",
-                "author",
-                "date",
-                "body",
-                "tags",
-            ]
+            "title",
+            "author",
+            "date",
+            "body",
+            "tags",
+        ]
     };
     let fuse = new Fuse(announcements, options); // "list" is the item array
 
@@ -82,6 +71,22 @@ $(document).ready(function () {
             displayRows(announcements);
         }
     });
+    
+    //downloads file and gets length using ajax, synchronous so you will have access to all file data
+    var json = (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': 'https://firebasestorage.googleapis.com/v0/b/backlinksnpo.appspot.com/o/announcements%2Freal.json?alt=media&token=f0b35b47-00cb-4490-b4e6-b3164afcd5fb',
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })(); 
+
 });
 
 function findEntryByRow(title, author, date, jsonArr) {
@@ -135,7 +140,7 @@ function displayRows(jsonArr, parentDiv = '.side-scroll-pane-rows') {
     }
 
     $(parentDiv).append(html);
-    
+
     if (currentlyDisplayedRowID){
         highlight(currentlyDisplayedRowID);
     }
@@ -154,3 +159,23 @@ function clearHighlight(rowID) {
     $(rowID).css("background-color", "rgba(237, 237, 237, 0)");
     $(rowID).css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0)");
 }
+
+
+
+//    gsReference.getDownloadURL().then(function(url) {
+//        // This can be downloaded directly:
+//        var xhr = new XMLHttpRequest();
+//        xhr.responseType = 'text';
+//        xhr.onload = function(event) {
+//            text = xhr.responseText;
+//            jsonResponse = JSON.parse(text);
+//            // all code that uses the json responses should go here!
+//            var length = Object.keys(jsonResponse).length;
+//            $('.entry-content').text(jsonResponse[length-1].body);
+//            $('.title').text(jsonResponse[length-1].title);
+//
+//        };
+//        xhr.open('GET', url);
+//        xhr.send();
+//
+//    });
