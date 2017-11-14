@@ -1,10 +1,3 @@
-//gets file from specific firebase bucket and converts it to json type
-var storage = firebase.storage();
-var gsReference = storage.ref('announcements/real.json');
-var text;
-var jsonResponse;
-var jsonObject;
-
 //'[{ "title": "test 1", "author": "a1", "date": "1.1.1111", "body": "this is test 1 for all intended purposes", "tags": "announcements, 1, specifical" }, { "title": "test 2", "author": "a2", "date": "2.2.2222", "body": "this is test 2 essentially", "tags": "announcements, 2, technical" }, { "title": "test 3", "author": "a3", "date": "3.3.3333", "body": "this is test 3 basically", "tags": "announcements, 3, general" }]'
 // announcements is saved to a json file ex: alert(jsonResponse[0].title) should return test 1y
 let announcements = [];
@@ -86,7 +79,10 @@ $(document).ready(function () {
         });
         return json;
     })(); 
-
+    // gets length of json array
+    var length = Object.keys(json).length;
+    
+    
 });
 
 function findEntryByRow(title, author, date, jsonArr) {
