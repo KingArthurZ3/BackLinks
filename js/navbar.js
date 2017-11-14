@@ -14,9 +14,9 @@ $(document).ready(function () {
         let displayTime = date.getHours() % 12 + ":" + date.getMinutes();
 
         $("#clock").text(displayTime + " " + suffix);
-
-        setInterval(setNavClock.bind(date, suffix), 60000);
     }
 
     setNavClock(date, suffix);
+//    setInterval(setNavClock.bind(date, suffix), 10000);
+
 });
