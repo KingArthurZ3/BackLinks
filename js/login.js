@@ -11,7 +11,7 @@ $(document).ready(function(){
     const mainContent = $('#main');
     const errorDisplay = $('#errorMessage');
     var userObj = "";
-    
+
 
     //TypeForm Data
     const formURL = "https://api.typeform.com/v1/form/r2SNKs?key=de1432909a011d2052a4551694cbe9e98bef6ff3"
@@ -43,25 +43,15 @@ $(document).ready(function(){
         promise.catch(e => console.log(e.message));
     });
 
-    // Listens for userinfo added with filepath for firebase
-    var commentsRef = firebase.database().ref('backlinksnpo/UserInfo/');
-    // Reaction to change in user data
-    commentsRef.on('child_added', function(data) {
-        alert("changed");
-        const email = data.Email;
-        const pass = data.Pass;
-
-        //creates User
-        const promise = auth.createUserWithEmailAndPassword(email, pass);
-
-        promise.catch(e => console.log(e.message));
-    });
-
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser) {
-            logContainer.hide();
-            mainContent.removeClass('blur');          
+
+            setTimeout(function(){
+                console.log(firebaseUser);
+                logContainer.hide();
+                mainContent.removeClass('blur');   
+            }, 1000);       
         } else {
             logContainer.show();
             mainContent.addClass('blur');
