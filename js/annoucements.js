@@ -126,7 +126,6 @@ function highlight(rowID, clearHighlightFirst=true) {
     }
 
     $(rowID).css("background-color", "rgba(237, 237, 237, 0.2)");
-    $(rowID).css("box-shadow", "0px 0px 15px rgba(0, 0, 0, 0.5)");
 }
 
 function clearHighlight(rowID) {

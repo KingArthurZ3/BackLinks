@@ -460,7 +460,7 @@ html {
     padding-right: 25px;
     overflow: scroll;
     background-color: rgba(237, 237, 237, 0.85);
-    border-left: 2px solid #afaeaf;
+/*    border-left: 2px solid #afaeaf;*/
 }
 
 .pane-container {
